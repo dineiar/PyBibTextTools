@@ -309,8 +309,8 @@ def run(folderPath, fileList, fileNameOut, logProcess):
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--folderPath", required=True, help="Bib files folder path")
-ap.add_argument("-f", "--fileList", nargs='*', required=False, help='bib file name list, e.g. -files IEEE.bib ACM.bib science.bib Springer.bib')
-ap.add_argument("-o", "--fileNameOut", required=False, help="File name of merged file")
+ap.add_argument("-f", "--fileList", nargs='*', required=True, help='bib file name list, e.g. -files IEEE.bib ACM.bib science.bib Springer.bib')
+ap.add_argument("-o", "--fileNameOut", required=True, help="File name of merged file")
 ap.add_argument("-l", "--logProcess", required=False, help="Log processing to csv files", action='store_true')
 
 args = vars(ap.parse_args())
