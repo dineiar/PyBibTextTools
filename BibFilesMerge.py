@@ -294,8 +294,10 @@ def run(folderPath, fileList, fileNameOut, logProcess):
 
         if not 'abstract' in entry.fields:
             withoutAbstract = withoutAbstract + 1
-            withoutAbstractList[entry.fields['source']] = withoutAbstractList[entry.fields['source']] + 1
-
+            if (entry.fields['source'] in withoutAbstractList):
+                withoutAbstractList[entry.fields['source']] = withoutAbstractList[entry.fields['source']] + 1
+            else:
+                withoutAbstractList[entry.fields['source']] = 1
     print("without Abstract ", withoutAbstract, withoutAbstractList)
 
     bibDataOut.to_file(fileNamePathOut)
